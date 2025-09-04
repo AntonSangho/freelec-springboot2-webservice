@@ -7,10 +7,9 @@ plugins {
 
 group 'com.jopjoldu.book'
 version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
-sourceCompatibility = 1.8
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17 // Java 17로 업그레이드 (Spring Boot 3.x 최소 요구사항)
+    JavaVersion.VERSION_17 // Java 17로 업그레이드 (Spring Boot 3.x 최소 요구사항)
 }
 // 원격저장소
 repositories {
@@ -27,4 +26,11 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     // 테스트
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    // Lombok 설정
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
 }
