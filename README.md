@@ -28,3 +28,6 @@
   - 역할: API 응답시 데이터를 담는 객체 
 
 참고링크
+
+- [교재 깃헙 레포지토리](https://github.com/jojoldu/freelec-springboot2-webservice) 
+- [교재 저자 블로그 ](https://jojoldu.tistory.com/)
