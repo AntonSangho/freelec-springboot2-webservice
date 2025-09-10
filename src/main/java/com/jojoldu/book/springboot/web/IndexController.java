@@ -5,13 +5,15 @@ import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.PostsService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import jakarta.servlet.http.HttpSession;
+
+import com.jojoldu.book.springboot.service.PostsService;
+import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.h2.engine.Mode;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
 
 @RequiredArgsConstructor
 @Controller
@@ -27,6 +29,11 @@ public class IndexController {
         if (user !=null) {
             model.addAttribute("userName", user.getName());
         }
+
+
+    @GetMapping("/")
+    public  String index(Model model) {
+        model.addAttribute("posts", postsService.findAllDesc());
         return "index" ;
     }
 

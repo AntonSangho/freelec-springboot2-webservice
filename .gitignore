@@ -13,3 +13,7 @@ Thumbs.db
 
 # Oauth
 application-oauth.properties
+
+# OS
+.DS_Store
+Thumbs.db
